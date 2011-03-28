@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      3372,        118]
-NotebookOptionsPosition[      2602,         87]
-NotebookOutlinePosition[      2960,        103]
-CellTagsIndexPosition[      2917,        100]
+NotebookDataLength[      3445,        119]
+NotebookOptionsPosition[      2674,         88]
+NotebookOutlinePosition[      3032,        104]
+CellTagsIndexPosition[      2989,        101]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -31,7 +31,8 @@ Cell[BoxData[
   RowBox[{"BeginPackage", "[", "\"\<MyStyle`Graphics`\>\"", "]"}], 
   ";"}]], "Input",
  InitializationGroup->True,
- CellChangeTimes->{{3.510327274915954*^9, 3.510327283758245*^9}}],
+ CellChangeTimes->{{3.510327274915954*^9, 3.510327283758245*^9}, 
+   3.510331738279237*^9, {3.510332636511484*^9, 3.510332639509285*^9}}],
 
 Cell[BoxData[
  RowBox[{"(*", 
@@ -86,7 +87,7 @@ Cell[BoxData[
 }, Open  ]]
 },
 WindowSize->{740, 867},
-WindowMargins->{{452, Automatic}, {118, Automatic}},
+WindowMargins->{{570, Automatic}, {119, Automatic}},
 FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 6, \
 2010)",
 StyleDefinitions->"Default.nb"
@@ -105,19 +106,19 @@ Notebook[{
 Cell[CellGroupData[{
 Cell[579, 22, 152, 4, 67, "Section",
  InitializationGroup->True],
-Cell[734, 28, 204, 5, 27, "Input",
+Cell[734, 28, 276, 6, 27, "Input",
  InitializationGroup->True],
-Cell[941, 35, 335, 8, 58, "Input",
+Cell[1013, 36, 335, 8, 58, "Input",
  InitializationGroup->True],
-Cell[1279, 45, 190, 4, 27, "Input",
+Cell[1351, 46, 190, 4, 27, "Input",
  InitializationGroup->True],
-Cell[1472, 51, 349, 9, 27, "Input",
+Cell[1544, 52, 349, 9, 27, "Input",
  InitializationGroup->True],
-Cell[1824, 62, 322, 7, 27, "Input",
+Cell[1896, 63, 322, 7, 27, "Input",
  InitializationGroup->True],
-Cell[2149, 71, 265, 7, 27, "Input",
+Cell[2221, 72, 265, 7, 27, "Input",
  InitializationGroup->True],
-Cell[2417, 80, 169, 4, 27, "Input",
+Cell[2489, 81, 169, 4, 27, "Input",
  InitializationGroup->True]
 }, Open  ]]
 }
