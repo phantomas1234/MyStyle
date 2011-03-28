@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      3445,        119]
-NotebookOptionsPosition[      2674,         88]
-NotebookOutlinePosition[      3032,        104]
-CellTagsIndexPosition[      2989,        101]
+NotebookDataLength[      3328,        113]
+NotebookOptionsPosition[      2650,         85]
+NotebookOutlinePosition[      3008,        101]
+CellTagsIndexPosition[      2965,         98]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -35,40 +35,34 @@ Cell[BoxData[
    3.510331738279237*^9, {3.510332636511484*^9, 3.510332639509285*^9}}],
 
 Cell[BoxData[
- RowBox[{"(*", 
-  RowBox[{
-   RowBox[{
-    RowBox[{"GetNDSolveProblem", "::", "usage"}], "=", 
-    "\"\<GetNDSolveProblem[name] returns an NDSolveProblem data structure for \
-the problem name.\>\""}], ";"}], "*)"}]], "Input",
- InitializationGroup->True,
- CellChangeTimes->{{3.510327294172112*^9, 3.5103272941735687`*^9}}],
-
-Cell[BoxData[
  RowBox[{
   RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}], ";"}]], "Input",
  InitializationGroup->True,
  CellChangeTimes->{{3.5103273060361433`*^9, 3.5103273060373793`*^9}}],
 
-Cell[BoxData[
+Cell[BoxData[{
  RowBox[{
   RowBox[{"commonToAll", "=", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{"Axes", "\[Rule]", "False"}], ",", 
-     RowBox[{"Frame", "\[Rule]", "True"}]}], "}"}]}], ";"}]], "Input",
+     RowBox[{"Frame", "\[Rule]", "True"}]}], "}"}]}], ";"}], "\n", 
+ RowBox[{"plotFunctions2D", "=", 
+  RowBox[{"{", 
+   RowBox[{
+   "ListPlot", ",", "ListLogPlot", ",", "ListLogLogPlot", ",", 
+    "ListLogLinearPlot", ",", "Plot", ",", "LogPlot", ",", "LogLogPlot", ",", 
+    "LogLinearPlot", ",", "ParametricPlot"}], "}"}]}], "\n", 
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{"SetOptions", "[", 
+    RowBox[{"plotFunc", ",", 
+     RowBox[{"Sequence", "@@", "commonToAll"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"plotFunc", ",", "plotFunctions2D"}], "}"}]}], "]"}]}], "Input",
  InitializationGroup->True,
  CellChangeTimes->{{3.5103265769001827`*^9, 3.510326583017271*^9}, {
-  3.510327398738757*^9, 3.510327416976717*^9}}],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"SetOptions", "[", 
-   RowBox[{"ListPlot", ",", 
-    RowBox[{"Sequence", "@@", "commonToAll"}]}], "]"}], ";"}]], "Input",
- InitializationGroup->True,
- CellChangeTimes->{{3.510326560607862*^9, 3.51032657286544*^9}, {
-   3.5103274222247963`*^9, 3.510327436969111*^9}, 3.510327481235992*^9}],
+   3.510327398738757*^9, 3.510327416976717*^9}, 3.510334539263418*^9}],
 
 Cell[BoxData[
  RowBox[{
@@ -83,11 +77,14 @@ Cell[BoxData[
  RowBox[{
   RowBox[{"EndPackage", "[", "]"}], ";"}]], "Input",
  InitializationGroup->True,
- CellChangeTimes->{{3.51032731791606*^9, 3.510327317917487*^9}}]
+ CellChangeTimes->{{3.51032731791606*^9, 3.510327317917487*^9}}],
+
+Cell[BoxData["SaveN"], "Input",
+ CellChangeTimes->{{3.51033434748987*^9, 3.5103343486110163`*^9}}]
 }, Open  ]]
 },
 WindowSize->{740, 867},
-WindowMargins->{{570, Automatic}, {119, Automatic}},
+WindowMargins->{{298, Automatic}, {129, Automatic}},
 FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 6, \
 2010)",
 StyleDefinitions->"Default.nb"
@@ -108,18 +105,15 @@ Cell[579, 22, 152, 4, 67, "Section",
  InitializationGroup->True],
 Cell[734, 28, 276, 6, 27, "Input",
  InitializationGroup->True],
-Cell[1013, 36, 335, 8, 58, "Input",
+Cell[1013, 36, 190, 4, 27, "Input",
  InitializationGroup->True],
-Cell[1351, 46, 190, 4, 27, "Input",
+Cell[1206, 42, 887, 22, 73, "Input",
  InitializationGroup->True],
-Cell[1544, 52, 349, 9, 27, "Input",
+Cell[2096, 66, 265, 7, 27, "Input",
  InitializationGroup->True],
-Cell[1896, 63, 322, 7, 27, "Input",
+Cell[2364, 75, 169, 4, 27, "Input",
  InitializationGroup->True],
-Cell[2221, 72, 265, 7, 27, "Input",
- InitializationGroup->True],
-Cell[2489, 81, 169, 4, 27, "Input",
- InitializationGroup->True]
+Cell[2536, 81, 98, 1, 27, "Input"]
 }, Open  ]]
 }
 ]
