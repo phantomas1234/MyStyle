@@ -1,0 +1,127 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3372,        118]
+NotebookOptionsPosition[      2602,         87]
+NotebookOutlinePosition[      2960,        103]
+CellTagsIndexPosition[      2917,        100]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Custom Graphic and Plot options\
+\>", "Section",
+ InitializationGroup->True,
+ CellChangeTimes->{{3.510327334403792*^9, 3.510327364910742*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"BeginPackage", "[", "\"\<MyStyle`Graphics`\>\"", "]"}], 
+  ";"}]], "Input",
+ InitializationGroup->True,
+ CellChangeTimes->{{3.510327274915954*^9, 3.510327283758245*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"GetNDSolveProblem", "::", "usage"}], "=", 
+    "\"\<GetNDSolveProblem[name] returns an NDSolveProblem data structure for \
+the problem name.\>\""}], ";"}], "*)"}]], "Input",
+ InitializationGroup->True,
+ CellChangeTimes->{{3.510327294172112*^9, 3.5103272941735687`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}], ";"}]], "Input",
+ InitializationGroup->True,
+ CellChangeTimes->{{3.5103273060361433`*^9, 3.5103273060373793`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"commonToAll", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+     RowBox[{"Frame", "\[Rule]", "True"}]}], "}"}]}], ";"}]], "Input",
+ InitializationGroup->True,
+ CellChangeTimes->{{3.5103265769001827`*^9, 3.510326583017271*^9}, {
+  3.510327398738757*^9, 3.510327416976717*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SetOptions", "[", 
+   RowBox[{"ListPlot", ",", 
+    RowBox[{"Sequence", "@@", "commonToAll"}]}], "]"}], ";"}]], "Input",
+ InitializationGroup->True,
+ CellChangeTimes->{{3.510326560607862*^9, 3.51032657286544*^9}, {
+   3.5103274222247963`*^9, 3.510327436969111*^9}, 3.510327481235992*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"End", "[", "]"}], ";", 
+  RowBox[{"(*", 
+   RowBox[{"End", " ", "`Private`", " ", 
+    RowBox[{"Context", "."}]}], "*)"}]}]], "Input",
+ InitializationGroup->True,
+ CellChangeTimes->{{3.510327331326003*^9, 3.5103273313272667`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EndPackage", "[", "]"}], ";"}]], "Input",
+ InitializationGroup->True,
+ CellChangeTimes->{{3.51032731791606*^9, 3.510327317917487*^9}}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{452, Automatic}, {118, Automatic}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 6, \
+2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 152, 4, 67, "Section",
+ InitializationGroup->True],
+Cell[734, 28, 204, 5, 27, "Input",
+ InitializationGroup->True],
+Cell[941, 35, 335, 8, 58, "Input",
+ InitializationGroup->True],
+Cell[1279, 45, 190, 4, 27, "Input",
+ InitializationGroup->True],
+Cell[1472, 51, 349, 9, 27, "Input",
+ InitializationGroup->True],
+Cell[1824, 62, 322, 7, 27, "Input",
+ InitializationGroup->True],
+Cell[2149, 71, 265, 7, 27, "Input",
+ InitializationGroup->True],
+Cell[2417, 80, 169, 4, 27, "Input",
+ InitializationGroup->True]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
