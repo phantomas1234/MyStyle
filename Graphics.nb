@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      7777,        227]
-NotebookOptionsPosition[      7021,        197]
-NotebookOutlinePosition[      7412,        214]
-CellTagsIndexPosition[      7369,        211]
+NotebookDataLength[      7909,        230]
+NotebookOptionsPosition[      7153,        200]
+NotebookOutlinePosition[      7544,        217]
+CellTagsIndexPosition[      7501,        214]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -138,7 +138,7 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{
    RowBox[{"errorListPlotBand", "[", 
-    RowBox[{"data__", ",", 
+    RowBox[{"data__List", ",", 
      RowBox[{"opts", ":", 
       RowBox[{"OptionsPattern", "[", "]"}]}]}], "]"}], ":=", 
    RowBox[{"Module", "[", 
@@ -152,7 +152,9 @@ Cell[BoxData[{
           RowBox[{"errorListPlotBand", "[", 
            RowBox[{"#", ",", 
             RowBox[{"Join", "[", 
-             RowBox[{"opts", ",", 
+             RowBox[{
+              RowBox[{"Flatten", "@", 
+               RowBox[{"{", "opts", "}"}]}], ",", 
               RowBox[{"{", 
                RowBox[{
                 RowBox[{"PlotStyle", "->", 
@@ -177,7 +179,8 @@ Cell[BoxData[{
   RowBox[{"Protect", "[", "errorListPlotBand", "]"}], ";"}]}], "Input",
  CellChangeTimes->{{3.514903332218532*^9, 3.514903545137807*^9}, {
   3.514903622945568*^9, 3.514903677371427*^9}, {3.51490372756634*^9, 
-  3.5149038682581663`*^9}, {3.514903989446334*^9, 3.514904031312055*^9}}],
+  3.5149038682581663`*^9}, {3.514903989446334*^9, 3.514904031312055*^9}, {
+  3.514907694652676*^9, 3.5149076979277277`*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -223,10 +226,10 @@ Cell[1232, 43, 190, 4, 27, "Input",
  InitializationGroup->True],
 Cell[1425, 49, 1503, 34, 118, "Input",
  InitializationGroup->True],
-Cell[2931, 85, 3634, 94, 238, "Input"],
-Cell[6568, 181, 265, 7, 27, "Input",
+Cell[2931, 85, 3766, 97, 238, "Input"],
+Cell[6700, 184, 265, 7, 27, "Input",
  InitializationGroup->True],
-Cell[6836, 190, 169, 4, 27, "Input",
+Cell[6968, 193, 169, 4, 27, "Input",
  InitializationGroup->True]
 }, Open  ]]
 }

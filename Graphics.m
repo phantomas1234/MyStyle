@@ -37,8 +37,8 @@ Unprotect[errorListPlotBand];
 errorListPlotBand[data_List,opts:OptionsPattern[]]:=Module[{},
 ListPlot[{#[[All,1]],#[[All,1]]+.5*#[[All,2]],#[[All,1]]-.5*#[[All,2]]},Joined->True,opts,PlotStyle->{Automatic,None,None},Filling->{1->{2},1->{3}},FillingStyle->Automatic]&[data]
 ];
-errorListPlotBand[data__,opts:OptionsPattern[]]:=Module[{},
-Show[Sequence@@MapIndexed[errorListPlotBand[#,Join[opts,{PlotStyle->{ColorData[1][#2[[1]]],None,None},FillingStyle->Opacity[.5,ColorData[1][#2[[1]]]]}]]&,List[data]]]
+errorListPlotBand[data__List,opts:OptionsPattern[]]:=Module[{},
+Show[Sequence@@MapIndexed[errorListPlotBand[#,Join[Flatten@{opts},{PlotStyle->{ColorData[1][#2[[1]]],None,None},FillingStyle->Opacity[.5,ColorData[1][#2[[1]]]]}]]&,List[data]]]
 ];
 Protect[errorListPlotBand];
 
