@@ -19,28 +19,18 @@
 
 
 
-BeginPackage["MyStyle`Graphics`"];
+BeginPackage["MyStyle`DataAnalysis`"];
 
 
-errorListPlotBand::usage="Draw data with error bands.";
+powerSpectrum::usage="powerSpectrum[data, timeSpan] returns the power spectrum of data set data.";
 
 
 Begin["`Private`"];
 
 
-commonToAll={Axes->False,Frame->True,PlotStyle->Black,BaseStyle->{"FontFamily"->"Helvetica",FontSize->12},ImageSize->350,PlotRange->All};
-plotFunctions2D={ListPlot,ListLogPlot,ListLogLogPlot,ListLogLinearPlot,Plot,LogPlot,LogLogPlot,LogLinearPlot,ParametricPlot,DateListPlot,DateListLogPlot}
-Do[SetOptions[plotFunc,Sequence@@commonToAll],{plotFunc,plotFunctions2D}]
-
-
-Unprotect[errorListPlotBand];
-errorListPlotBand[data_List,opts:OptionsPattern[]]:=Module[{},
-ListPlot[{#[[All,1]],#[[All,1]]+.5*#[[All,2]],#[[All,1]]-.5*#[[All,2]]},Joined->True,opts,PlotStyle->{Automatic,None,None},Filling->{1->{2},1->{3}},FillingStyle->Automatic]&[data]
-];
-errorListPlotBand[data__,opts:OptionsPattern[]]:=Module[{},
-Show[Sequence@@MapIndexed[errorListPlotBand[#,Join[opts,{PlotStyle->{ColorData[1][#2[[1]]],None,None},FillingStyle->Opacity[.5,ColorData[1][#2[[1]]]]}]]&,List[data]]]
-];
-Protect[errorListPlotBand];
+Unprotect[powerSpectrum];
+powerSpectrum[data_List,timeSpan_]:=Module[{},Thread[List[Range[1,Length[#]]*(2Pi/timeSpan),#]]&[(#[[2;;Ceiling[Length[#]/2]]]&@Abs[Fourier[data]]^2)]];
+Protect[powerSpectrum];
 
 
 End[];(*End `Private` Context.*)

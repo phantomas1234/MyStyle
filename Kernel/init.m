@@ -1,2 +1,2 @@
-BeginPackage["MyStyle`", {"MyStyle`Graphics`"}]
+BeginPackage["MyStyle`", {"MyStyle`Graphics`", "MyStyle`DataAnalysis`"}]
 EndPackage[]
