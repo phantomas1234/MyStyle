@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      3328,        113]
-NotebookOptionsPosition[      2650,         85]
-NotebookOutlinePosition[      3008,        101]
-CellTagsIndexPosition[      2965,         98]
+NotebookDataLength[      7915,        231]
+NotebookOptionsPosition[      7122,        200]
+NotebookOutlinePosition[      7513,        217]
+CellTagsIndexPosition[      7470,        214]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -36,6 +36,13 @@ Cell[BoxData[
 
 Cell[BoxData[
  RowBox[{
+  RowBox[{
+   RowBox[{"errorListPlotBand", "::", "usage"}], "=", 
+   "\"\<Draw data with error bands.\>\""}], ";"}]], "Input",
+ CellChangeTimes->{{3.514904738221765*^9, 3.514904768286735*^9}}],
+
+Cell[BoxData[
+ RowBox[{
   RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}], ";"}]], "Input",
  InitializationGroup->True,
  CellChangeTimes->{{3.5103273060361433`*^9, 3.5103273060373793`*^9}}],
@@ -46,13 +53,22 @@ Cell[BoxData[{
    RowBox[{"{", 
     RowBox[{
      RowBox[{"Axes", "\[Rule]", "False"}], ",", 
-     RowBox[{"Frame", "\[Rule]", "True"}]}], "}"}]}], ";"}], "\n", 
+     RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", "Black"}], ",", 
+     RowBox[{"BaseStyle", "->", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"\"\<FontFamily\>\"", "\[Rule]", "\"\<Helvetica\>\""}], ",", 
+        RowBox[{"FontSize", "\[Rule]", "12"}]}], "}"}]}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "350"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}]}], "}"}]}], ";"}], "\n", 
  RowBox[{"plotFunctions2D", "=", 
   RowBox[{"{", 
    RowBox[{
    "ListPlot", ",", "ListLogPlot", ",", "ListLogLogPlot", ",", 
     "ListLogLinearPlot", ",", "Plot", ",", "LogPlot", ",", "LogLogPlot", ",", 
-    "LogLinearPlot", ",", "ParametricPlot"}], "}"}]}], "\n", 
+    "LogLinearPlot", ",", "ParametricPlot", ",", "DateListPlot", ",", 
+    "DateListLogPlot"}], "}"}]}], "\n", 
  RowBox[{"Do", "[", 
   RowBox[{
    RowBox[{"SetOptions", "[", 
@@ -62,7 +78,106 @@ Cell[BoxData[{
     RowBox[{"plotFunc", ",", "plotFunctions2D"}], "}"}]}], "]"}]}], "Input",
  InitializationGroup->True,
  CellChangeTimes->{{3.5103265769001827`*^9, 3.510326583017271*^9}, {
-   3.510327398738757*^9, 3.510327416976717*^9}, 3.510334539263418*^9}],
+   3.510327398738757*^9, 3.510327416976717*^9}, 3.510334539263418*^9, {
+   3.510335096876833*^9, 3.5103351345001287`*^9}, {3.510335202934353*^9, 
+   3.51033520964725*^9}, {3.510336406259515*^9, 3.510336409722645*^9}, {
+   3.511014416776716*^9, 3.511014424038962*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Unprotect", "[", "errorListPlotBand", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"errorListPlotBand", "[", 
+    RowBox[{"data_List", ",", 
+     RowBox[{"opts", ":", 
+      RowBox[{"OptionsPattern", "[", "]"}]}]}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"ListPlot", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"#", "[", 
+            RowBox[{"[", 
+             RowBox[{"All", ",", "1"}], "]"}], "]"}], ",", 
+           RowBox[{
+            RowBox[{"#", "[", 
+             RowBox[{"[", 
+              RowBox[{"All", ",", "1"}], "]"}], "]"}], "+", 
+            RowBox[{".5", "*", 
+             RowBox[{"#", "[", 
+              RowBox[{"[", 
+               RowBox[{"All", ",", "2"}], "]"}], "]"}]}]}], ",", 
+           RowBox[{
+            RowBox[{"#", "[", 
+             RowBox[{"[", 
+              RowBox[{"All", ",", "1"}], "]"}], "]"}], "-", 
+            RowBox[{".5", "*", 
+             RowBox[{"#", "[", 
+              RowBox[{"[", 
+               RowBox[{"All", ",", "2"}], "]"}], "]"}]}]}]}], "}"}], ",", 
+         RowBox[{"Joined", "\[Rule]", "True"}], ",", "opts", ",", 
+         RowBox[{"PlotStyle", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"Automatic", ",", "None", ",", "None"}], "}"}]}], ",", 
+         RowBox[{"Filling", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"1", "\[Rule]", 
+             RowBox[{"{", "2", "}"}]}], ",", 
+            RowBox[{"1", "\[Rule]", 
+             RowBox[{"{", "3", "}"}]}]}], "}"}]}], ",", 
+         RowBox[{"FillingStyle", "\[Rule]", "Automatic"}]}], "]"}], "&"}], 
+      "[", "data", "]"}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"errorListPlotBand", "[", 
+    RowBox[{"data__", ",", 
+     RowBox[{"opts", ":", 
+      RowBox[{"OptionsPattern", "[", "]"}]}]}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Show", "[", 
+      RowBox[{"Sequence", "@@", 
+       RowBox[{"MapIndexed", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"errorListPlotBand", "[", 
+           RowBox[{"#", ",", 
+            RowBox[{"Join", "[", 
+             RowBox[{"opts", ",", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"PlotStyle", "->", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{"ColorData", "[", "1", "]"}], "[", 
+                    RowBox[{"#2", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], "]"}], ",", "None", ",", 
+                   "None"}], "}"}]}], ",", 
+                RowBox[{"FillingStyle", "\[Rule]", 
+                 RowBox[{"Opacity", "[", 
+                  RowBox[{".5", ",", 
+                   RowBox[{
+                    RowBox[{"ColorData", "[", "1", "]"}], "[", 
+                    RowBox[{"#2", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "]"}]}]}], 
+               "}"}]}], "]"}]}], "]"}], "&"}], ",", 
+         RowBox[{"List", "[", "data", "]"}]}], "]"}]}], "]"}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Protect", "[", "errorListPlotBand", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.514903332218532*^9, 3.514903545137807*^9}, {
+  3.514903622945568*^9, 3.514903677371427*^9}, {3.51490372756634*^9, 
+  3.5149038682581663`*^9}, {3.514903989446334*^9, 3.514904031312055*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -83,8 +198,9 @@ Cell[BoxData["SaveN"], "Input",
  CellChangeTimes->{{3.51033434748987*^9, 3.5103343486110163`*^9}}]
 }, Open  ]]
 },
+AutoGeneratedPackage->Automatic,
 WindowSize->{740, 867},
-WindowMargins->{{298, Automatic}, {129, Automatic}},
+WindowMargins->{{308, Automatic}, {Automatic, 131}},
 FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 6, \
 2010)",
 StyleDefinitions->"Default.nb"
@@ -105,15 +221,17 @@ Cell[579, 22, 152, 4, 67, "Section",
  InitializationGroup->True],
 Cell[734, 28, 276, 6, 27, "Input",
  InitializationGroup->True],
-Cell[1013, 36, 190, 4, 27, "Input",
+Cell[1013, 36, 216, 5, 27, "Input"],
+Cell[1232, 43, 190, 4, 27, "Input",
  InitializationGroup->True],
-Cell[1206, 42, 887, 22, 73, "Input",
+Cell[1425, 49, 1503, 34, 118, "Input",
  InitializationGroup->True],
-Cell[2096, 66, 265, 7, 27, "Input",
+Cell[2931, 85, 3634, 94, 238, "Input"],
+Cell[6568, 181, 265, 7, 27, "Input",
  InitializationGroup->True],
-Cell[2364, 75, 169, 4, 27, "Input",
+Cell[6836, 190, 169, 4, 27, "Input",
  InitializationGroup->True],
-Cell[2536, 81, 98, 1, 27, "Input"]
+Cell[7008, 196, 98, 1, 27, "Input"]
 }, Open  ]]
 }
 ]
