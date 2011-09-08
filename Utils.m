@@ -19,30 +19,16 @@
 
 
 
-BeginPackage["MyStyle`DataAnalysis`"];
+BeginPackage["MyStyle`Utils`"];
 
 
-powerSpectrum::usage="powerSpectrum[data, timeSpan] returns the power spectrum of data set data.";
-
-
-scatterFromDicts::usage="scatterFromDicts[dict, ...] constructs a scatter representation of the data associated with the the common keys of dicts."
+killK::usage="killK kills the Kernel.";
 
 
 Begin["`Private`"];
 
 
-Unprotect[powerSpectrum];
-powerSpectrum[data_List,timeSpan_]:=Module[{},Thread[List[Range[1,Length[#]]*(2Pi/timeSpan),#]]&[(#[[2;;Ceiling[Length[#]/2]]]&@Abs[Fourier[data]]^2)]];
-Protect[powerSpectrum];
-
-
-Unprotect[scatterFromDicts];
-scatterFromDicts[dicts__]:=Module[{ldicts,commonkeys},
-ldicts=List[dicts];
-commonkeys=Union[Flatten@Intersection[Sequence@@ldicts[[All,All,1]]]];
-Table[k->(k/.#&/@ldicts),{k,commonkeys}]
-];
-Protect[scatterFromDicts];
+killK:=FrontEndExecute[FrontEndToken["EvaluatorQuit"]]
 
 
 End[];(*End `Private` Context.*)

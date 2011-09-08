@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      4097,        138]
-NotebookOptionsPosition[      3411,        110]
-NotebookOutlinePosition[      3802,        127]
-CellTagsIndexPosition[      3759,        124]
+NotebookDataLength[      5857,        186]
+NotebookOptionsPosition[      5092,        156]
+NotebookOutlinePosition[      5483,        173]
+CellTagsIndexPosition[      5440,        170]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -41,7 +41,15 @@ Cell[BoxData[
    "\"\<powerSpectrum[data, timeSpan] returns the power spectrum of data set \
 data.\>\""}], ";"}]], "Input",
  CellChangeTimes->{{3.514904738221765*^9, 3.514904768286735*^9}, {
-  3.514904990941442*^9, 3.51490502810284*^9}}],
+  3.514904990941442*^9, 3.51490502810284*^9}, {3.51776592187193*^9, 
+  3.5177659229434223`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"scatterFromDicts", "::", "usage"}], "=", 
+  "\"\<scatterFromDicts[dict, ...] constructs a scatter representation of the \
+data associated with the the common keys of dicts.\>\""}]], "Input",
+ CellChangeTimes->{{3.51776592487995*^9, 3.517765971000605*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -91,6 +99,44 @@ Cell[BoxData[{
   RowBox[{"Protect", "[", "powerSpectrum", "]"}], ";"}]}], "Input",
  CellChangeTimes->{{3.514905031264593*^9, 3.514905049489101*^9}}],
 
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Unprotect", "[", "scatterFromDicts", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"scatterFromDicts", "[", "dicts__", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"ldicts", ",", "commonkeys"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"ldicts", "=", 
+       RowBox[{"List", "[", "dicts", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"commonkeys", "=", 
+       RowBox[{"Union", "[", 
+        RowBox[{"Flatten", "@", 
+         RowBox[{"Intersection", "[", 
+          RowBox[{"Sequence", "@@", 
+           RowBox[{"ldicts", "[", 
+            RowBox[{"[", 
+             RowBox[{"All", ",", "All", ",", "1"}], "]"}], "]"}]}], "]"}]}], 
+        "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"k", "\[Rule]", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"k", "/.", "#"}], "&"}], "/@", "ldicts"}], ")"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"k", ",", "commonkeys"}], "}"}]}], "]"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Protect", "[", "scatterFromDicts", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.51776587880062*^9, 3.517765916198657*^9}}],
+
 Cell[BoxData[
  RowBox[{
   RowBox[{
@@ -131,13 +177,15 @@ Cell[579, 22, 180, 3, 67, "Section",
  InitializationGroup->True],
 Cell[762, 27, 330, 7, 27, "Input",
  InitializationGroup->True],
-Cell[1095, 36, 309, 7, 43, "Input"],
-Cell[1407, 45, 190, 4, 27, "Input",
+Cell[1095, 36, 359, 8, 43, "Input"],
+Cell[1457, 46, 290, 5, 58, "Input"],
+Cell[1750, 53, 190, 4, 27, "Input",
  InitializationGroup->True],
-Cell[1600, 51, 1341, 40, 88, "Input"],
-Cell[2944, 93, 279, 8, 27, "Input",
+Cell[1943, 59, 1341, 40, 88, "Input"],
+Cell[3287, 101, 1335, 36, 118, "Input"],
+Cell[4625, 139, 279, 8, 27, "Input",
  InitializationGroup->True],
-Cell[3226, 103, 169, 4, 27, "Input",
+Cell[4907, 149, 169, 4, 27, "Input",
  InitializationGroup->True]
 }, Open  ]]
 }
